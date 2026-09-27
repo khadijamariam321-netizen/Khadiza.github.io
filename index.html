@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Playground Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Khadiza | Civil Engineering Student</title>
+
+    <style>
+        /* ================= BASIC ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #263238;
+            background: #f7f9f8;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background: #102a43;
+            padding: 16px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4b942;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 92vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background: linear-gradient(135deg,
+                    #102a43,
+                    #176b87,
+                    #2a9d8f);
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .profile-img {
+            width: 165px;
+            height: 165px;
+
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 5px solid #f4b942;
+
+            margin-bottom: 22px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 8px;
+        }
+
+        .hero h2 {
+            font-size: 27px;
+            font-weight: normal;
+            color: #f4b942;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 12px 25px;
+            margin: 5px;
+
+            background: #f4b942;
+            color: #102a43;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 75px 8%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+
+            font-size: 34px;
+
+            color: #102a43;
+
+            margin-bottom: 40px;
+
+            position: relative;
+        }
+
+        section h2::after {
+            content: "";
+
+            display: block;
+
+            width: 55px;
+            height: 4px;
+
+            background: #f4b942;
+
+            margin: 10px auto;
+
+            border-radius: 5px;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+
+            text-align: center;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= CARDS ================= */
+
+        .card-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 27px;
+
+            border-radius: 12px;
+
+            border-top: 4px solid #2a9d8f;
+
+            box-shadow:
+                0 5px 18px rgba(16, 42, 67, 0.09);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 25px rgba(16, 42, 67, 0.15);
+        }
+
+        .card h3 {
+            color: #176b87;
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #52606d;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 13px;
+        }
+
+        .skill {
+            background: #102a43;
+
+            color: white;
+
+            padding: 10px 19px;
+
+            border-radius: 25px;
+
+            font-size: 14px;
+
+            border: 1px solid #2a9d8f;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #2a9d8f;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 16px 0;
+
+            font-size: 17px;
+        }
+
+        .contact a {
+            color: #176b87;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            color: #f4b942;
+
+            text-decoration: underline;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #102a43;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 28px;
+
+            margin-top: 30px;
+        }
+
+        footer span {
+            color: #f4b942;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <ul>
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#education">Education</a></li>
+
+            <li><a href="#skills">Skills</a></li>
+
+            <li><a href="#projects">Projects</a></li>
+
+            <li><a href="#research">Research</a></li>
+
+            <li><a href="#activities">Activities</a></li>
+
+            <li><a href="#volunteering">Volunteering</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <img
+        src="profile.jpg"
+        alt="Khadiza"
+        class="profile-img"
+      >
+
+            <h1>Hi, I'm Khadiza</h1>
+
+            <h2>Civil Engineering Student</h2>
+
+            <p>
+                Passionate about Civil Engineering,
+                Structural Engineering, Research,
+                and Continuous Learning.
+            </p>
+
+            <a href="#projects" class="btn">
+                View Projects
+            </a>
+
+            <a href="#contact" class="btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I am a Civil Engineering student at
+                Pabna University of Science and Technology,
+                currently studying in my 2nd year.
+            </p>
+
+            <br>
+
+            <p>
+                I am interested in Structural Engineering,
+                Engineering Design, Construction Materials,
+                Research, and Innovative Engineering Solutions.
+            </p>
+
+            <br>
+
+            <p>
+                Alongside my academic studies, I actively
+                participate in extracurricular activities,
+                professional organizations, volunteering,
+                skill development programs, and community
+                activities.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="card-container">
+
+
+            <div class="card">
+
+                <h3>BSc in Civil Engineering</h3>
+
+                <p>
+                    <strong>
+            Pabna University of Science and Technology
+          </strong>
+                </p>
+
+                <p>
+                    Currently in 2nd Year
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Higher Secondary Certificate (HSC)</h3>
+
+                <p>
+                    <strong>
+            Shahzadpur Government College
+          </strong>
+                </p>
+
+                <p>
+                    Completed in 2024
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Secondary School Certificate (SSC)</h3>
+
+                <p>
+                    <strong>
+            Shahzadpur Ibrahim Pilot Girls' School
+          </strong>
+                </p>
+
+                <p>
+                    Completed in 2022
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">AutoCAD</div>
+
+            <div class="skill">Structural Analysis</div>
+
+            <div class="skill">Engineering Drawing</div>
+
+            <div class="skill">Research</div>
+
+            <div class="skill">MS Office</div>
+
+            <div class="skill">Presentation</div>
+
+            <div class="skill">Teamwork</div>
+
+            <div class="skill">Communication</div>
+
+            <div class="skill">Problem Solving</div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="card-container">
+
+
+            <div class="card">
+
+                <h3>Truss Competition Project</h3>
+
+                <p>
+                    Designing and analyzing a truss structure
+                    with a focus on structural efficiency,
+                    stability, and innovative design.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Building Plan in AutoCAD</h3>
+
+                <p>
+                    Developing building plans using AutoCAD
+                    while applying engineering drawing and
+                    planning concepts.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Engineering Laboratory Projects</h3>
+
+                <p>
+                    Academic laboratory work related to
+                    civil engineering materials, construction,
+                    and engineering properties.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Future Structural Design Projects</h3>
+
+                <p>
+                    Interested in developing practical
+                    structural engineering projects and
+                    innovative structural solutions.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= RESEARCH ================= -->
+
+    <section id="research">
+
+        <h2>Research</h2>
+
+        <div class="card-container">
+
+
+            <div class="card">
+
+                <h3>
+                    Resolving the Diploma-BSc Contradiction:
+                    Insights from Student Protest and
+                    Educational Policies
+                </h3>
+
+                <p>
+                    Research focusing on diploma versus BSc
+                    engineering education and employment-related
+                    issues in Bangladesh, student perspectives,
+                    protests, and educational policies.
+                </p>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Research Interests</h3>
+
+                <p>
+                    Structural Engineering, Construction
+                    Materials, Sustainable Engineering,
+                    Innovative Structures, and Engineering
+                    Education.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ACTIVITIES ================= -->
+
+    <section id="activities">
+
+        <h2>Activities & Memberships</h2>
+
+        <div class="card-container">
+
+
+            <!-- Solver Green -->
+
+            <div class="card">
+
+                <h3>Member</h3>
+
+                <p>
+                    <strong>
+            Solver Green PUST
+          </strong>
+                </p>
+
+                <p>
+                    A student club focused on developing
+                    both hard and soft skills through
+                    learning, teamwork, skill development,
+                    and various student activities.
+                </p>
+
+            </div>
+
+
+
+            <!-- Scout -->
+
+            <div class="card">
+
+                <h3>Member</h3>
+
+                <p>
+                    <strong>
+            Scout PUST
+          </strong>
+                </p>
+
+                <p>
+                    Participating in scouting activities,
+                    teamwork, leadership development,
+                    and community-oriented initiatives.
+                </p>
+
+            </div>
+
+
+
+            <!-- ASCE -->
+
+            <div class="card">
+
+                <h3>Student Member</h3>
+
+                <p>
+                    <strong>
+            American Society of Civil Engineers (ASCE)
+          </strong>
+                </p>
+
+                <p>
+                    Engaging with professional resources,
+                    learning opportunities, and activities
+                    related to Civil Engineering.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= VOLUNTEERING ================= -->
+
+    <section id="volunteering">
+
+        <h2>Volunteering & Community Service</h2>
+
+        <div class="card-container">
+
+
+            <!-- PUST CEC -->
+
+            <div class="card">
+
+                <h3>Volunteer</h3>
+
+                <p>
+                    <strong>
+            PUST Career and Entrepreneurship Club
+          </strong>
+                </p>
+
+                <p>
+                    Contributing to club activities,
+                    student development initiatives,
+                    event organization, teamwork,
+                    and community-oriented programs.
+                </p>
+
+            </div>
+
+
+
+            <!-- Community Service -->
+
+            <div class="card">
+
+                <h3>Community Engagement</h3>
+
+                <p>
+                    Participating in collaborative activities
+                    that promote teamwork, social responsibility,
+                    leadership, and positive community engagement.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <div class="contact">
+
+
+            <!-- EMAIL -->
+
+            <p>
+
+                📧 Email:
+
+                <a href="mailto:khadijamariam321@gmail.com">
+                    khadijamariam321@gmail.com
+                </a>
+
+            </p>
+
+
+
+            <!-- LINKEDIN -->
+
+            <p>
+
+                🔗 LinkedIn:
+
+                <a href="https://www.linkedin.com/in/khadiza-tahera-265b88342" target="_blank">
+                    LinkedIn Profile
+                </a>
+
+            </p>
+
+
+
+            <!-- FACEBOOK -->
+
+            <p>
+
+                📘 Facebook:
+
+                <a href="https://www.facebook.com/share/1Db149DHKq/" target="_blank">
+                    Facebook Profile
+                </a>
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Khadiza</span> |
+            Civil Engineering Student
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+    <script src="script.js"></script>
+</body>
+</html>
